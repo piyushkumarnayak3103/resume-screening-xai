@@ -164,16 +164,24 @@ Job Description   →  2. NLP Preprocessing            →   Skill Gap Report
 | CV F1     | 5-fold cross-validation weighted F1                | > 82%   |
 
 ---
+## 🔧 Author
+Piyush Kumar Nayak
+B.Tech Computer Science & Engineering
+Institute of Technical Education and Research (ITER)
+Siksha 'O' Anusandhan University
+Project Supervisor: Dr. Prativa Das
 
-## 👥 Work Distribution
+---
 
-| Member               | Reg. No.   | Role                              | Modules                          |
-|----------------------|------------|-----------------------------------|----------------------------------|
-| **Piyush Kumar Nayak** | 2241014099 | **Team Lead** + Frontend + Skill Gap | `skill_gap.py`, `templates/`, `static/` |
-| Pradymn Nayak        | 2241014101 | ML Engineer                       | `features.py`, `model_training.py`, `models/` |
-| Pankaj Nayak         | 2241014098 | NLP & Resume Parser               | `parser.py`, `preprocessing.py` |
-| Om Prakash Nayak     | 2241014096 | XAI & Visualisation               | `xai.py`, SHAP plots            |
-| Rounak Samal         | 2241019258 | Backend & Database                | `routes.py`, `app.py`, `config.py` |
+## Contributions
+
+- Designed and developed the complete Resume Screening Framework
+- Implemented TF-IDF and BERT based feature extraction
+- Trained and evaluated Machine Learning models
+- Integrated SHAP Explainable AI visualizations
+- Developed Skill Gap Analysis and Job Recommendation modules
+- Built the Flask web application and user interface
+- Prepared project documentation and deployment workflow
 
 ---
 
@@ -184,25 +192,6 @@ Edit `config.py` to change:
 - **`TFIDF_MAX_FEATURES`** — vocabulary size (default 5000)
 - **`RF_N_ESTIMATORS`** — Random Forest trees (default 200)
 - **`BERT_MODEL_NAME`** — swap for a larger/smaller model
-
----
-
-## ❓ Viva Q&A Cheatsheet
-
-**Q: Why use both TF-IDF and BERT?**
-A: TF-IDF captures exact keyword matches (fast, sparse). BERT captures semantic meaning — e.g., "ML engineer" ≈ "machine learning developer". Combining them (hybrid score) gives the best of both.
-
-**Q: Why Random Forest over Logistic Regression?**
-A: RF is an ensemble of decision trees — more robust to overfitting on high-dimensional TF-IDF features. LR is kept as a baseline. In experiments, RF gives ~2% higher F1.
-
-**Q: What does SHAP stand for and how does it work?**
-A: SHapley Additive exPlanations. It assigns each feature (word) a value representing its contribution to the model's prediction, based on cooperative game theory (Shapley values).
-
-**Q: How is the skill gap calculated?**
-A: Set difference — `missing = required_skills - resume_skills`. Match % = `|intersection| / |required_skills| × 100`.
-
-**Q: What is the hybrid similarity score?**
-A: `hybrid = 0.4 × tfidf_cosine + 0.6 × bert_cosine`. The BERT weight is higher because semantic similarity is more meaningful than keyword overlap.
 
 ---
 
